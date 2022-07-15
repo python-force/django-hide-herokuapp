@@ -2,11 +2,11 @@
 try:
     from django.conf.urls import url
 except ImportError:
-    from django.conf.urls.defaults import url
+    from django.urls import re_path
 
 from hide_herokuapp.views import herokuapp_robots_view
 
 
 urlpatterns = [
-    url(r'^robots\.txt$', herokuapp_robots_view),
+    re_path(r'^robots\.txt$', herokuapp_robots_view),
 ]
